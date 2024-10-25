@@ -1,3 +1,3 @@
 <?php
-$API_HOST = "http://81.24.123.72:8000";
-$API_KEY = 'Pm9gE8aG.DMNZDSfrxTxvD43uiS7bjrxrEVmoabab';
+$API_HOST =  ""; # EXAMPLE: http://81.23.015.33:8000/ 
+$API_KEY = ""; # EXAMPLE: "JFRrwa2D.SD3on074GY93Qt5lP3sKl8adyEJnec7s 

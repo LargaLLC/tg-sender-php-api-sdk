@@ -302,5 +302,52 @@ function send_photo_to_subscribers($name, $photo_path, $caption = '', $API_HOST,
     return $response_json;  // Или $status_code для получения статуса ответа
 }
 
+
+function send_two_photo_to_subscribers($name, $photo_path, $photo_path2, $caption = '', $API_HOST, $API_KEY) {
+    $relative_url = '/api/send-two-photo-to-subscribers/';
+    $prepared_str = $API_HOST . $relative_url;
+
+    // Проверка существования файла
+    if (!file_exists($photo_path)) {
+        return ['error' => 'Файл не найден: ' . $photo_path];
+    }
+
+    // Проверка существования файла
+    if (!file_exists($photo_path2)) {
+        return ['error' => 'Файл не найден: ' . $photo_path];
+    }
+
+    // Подготовка файла для отправки
+    $file = new CURLFile($photo_path);
+    $file2 = new CURLFile($photo_path2);
+    $data = [
+        'name' => $name,
+        'caption' => $caption,
+        'photo' => $file,
+        'photo2' => $file2,
+    ];
+
+    $headers = [
+        'Authorization: Api-Key ' . $API_KEY
+    ];
+
+    // Инициализация cURL
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $prepared_str);
+    curl_setopt($ch, CURLOPT_POST, true);
+    
+    // Не используем http_build_query, просто передаем массив данных
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+    // Выполнение запроса и получение ответа
+    $response = curl_exec($ch);
+    $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+    $response_json = json_decode($response, true);
+    return $response_json;  // Или $status_code для получения статуса ответа
+}
+
 #=================================КОМАНДЫ КОНЕЦ============================================
 
