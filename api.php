@@ -314,7 +314,7 @@ function send_two_photo_to_subscribers($name, $photo_path, $photo_path2, $captio
 
     // Проверка существования файла
     if (!file_exists($photo_path2)) {
-        return ['error' => 'Файл не найден: ' . $photo_path];
+        return ['error' => 'Файл не найден: ' . $photo_path2];
     }
 
     // Подготовка файла для отправки
