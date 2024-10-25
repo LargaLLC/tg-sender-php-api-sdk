@@ -1,11 +1,6 @@
-# PHP API SDK для проекта fire_smoke_detector
+# PHP API SDK для проекта tg_sender
 Разрабатывалось и тестировалось на PHP7.2
-Ссылка на приватный репозиторий fire_smoke_detector: https://github.com/LargaLLC/fire_smoke_detector
-
-## Документация по API
-Документация по api: http://81.24.123.68:8002/
-Для полноценного доступа к документации необходимо запросить авторизационные данные у разработчика/администратора биллинга
-
+Ссылка на приватный репозиторий tg_sender: https://github.com/LargaLLC/tg_sender
 
 ## Установка
 ```sh
