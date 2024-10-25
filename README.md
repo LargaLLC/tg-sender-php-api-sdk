@@ -4,7 +4,7 @@
 
 ## Установка
 ```sh
-git clone https://github.com/alexlugovsk/optima-billing
+git clone git@github.com:LargaLLC/tg-sender-php-api-sdk.git
 ```
 Или просто скопируйте api.php и config.php файлы в свой проект, в целом этого достаточно.
 
